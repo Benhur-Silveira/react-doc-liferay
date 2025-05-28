@@ -251,9 +251,4 @@ export const codenpmbundlerrcCli = `
 
 export const codeRoutes = `import { Route, HashRouter as Router, Routes } from "react-router-dom";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);`;
+`;
