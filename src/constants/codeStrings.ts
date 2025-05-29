@@ -249,6 +249,58 @@ export const codenpmbundlerrcCli = `
   }
 }`;
 
-export const codeRoutes = `import { Route, HashRouter as Router, Routes } from "react-router-dom";
+export const codeWebPackConfig = `const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+  plugins: [new HtmlWebpackPlugin({})],
+  devServer: {
+    static: "./dist",
+    port: 3000,
+    host: "localhost",
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
+  mode: "development",
+};
+`;
+
+export const codeWebPackIndex = `import React from "react";
+import ReactDOM from "react-dom";
+
+import AppComponent from "./AppComponent";
+
+export default function main(params) {
+  ReactDOM.render(
+    <AppComponent />,
+    document.getElementById(params.portletElementId),
+  );
+}
+//--------Comentar essa parte para quando for buildar o módulo--------
+main({
+  portletNamespace: "",
+  contextPath: "",
+  portletElementId: "root",
+  configuration: {},
+});
+//----------
 `;

@@ -10,7 +10,6 @@ import { LiferayCliAmbiente } from "@/pages/liferaycli/ambiente";
 import { LiferayCliModulo } from "@/pages/liferaycli/modulo";
 import { LiferayCliSharedBundle } from "@/pages/liferaycli/sharedBundle";
 import { ModuloHashRouter } from "@/pages/modulos/hashrouter";
-import { ModuloConfigurations } from "@/pages/modulos/configurations";
 import { ModuloLanguages } from "@/pages/modulos/languages";
 import { Modulo } from "@/pages/modulos";
 import { ModuloDicas } from "@/pages/modulos/dicas";
@@ -73,9 +72,6 @@ const routes = createBrowserRouter([
             element: <ModuloLanguages />,
           },
           {
-            path: "configurations",
-            element: <ModuloConfigurations />,
-          }, {
             path: "dicas",
             element: <ModuloDicas />,
           },

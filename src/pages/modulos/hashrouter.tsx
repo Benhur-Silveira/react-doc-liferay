@@ -2,8 +2,97 @@ import { CodeBlock } from "@/components/codeBlock";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ShieldAlert } from "lucide-react";
+import { StructureDir, type StructureType, } from "@/components/structureDir";
+import { codeLanguagesAbout, codeLanguagesEn, codeLanguagesHome, codeLanguagesPt } from "@/constants/codeLanguages";
+import { codeRoutes, codeRoutesAbout, codeRoutesHome, codeRoutesIndex } from "@/constants/codeRoute";
 
 export const ModuloHashRouter = () => {
+
+  const structureHashRouter: StructureType[] = [{
+    name: "react-com-router",
+    type: "folder",
+    children: [
+      {
+        name: "features",
+        type: "folder",
+        space: "2"
+      },
+      {
+        name: "localization",
+        type: "folder",
+        space: "4"
+      },
+      {
+        name: "Language.properties",
+        type: "properties",
+        space: "8",
+        code: codeLanguagesEn
+      },
+      {
+        name: "Language_pt_BR.properties",
+        type: "properties",
+        space: "8",
+        code: codeLanguagesPt
+      },
+      {
+        name: "src",
+        type: "folder",
+        space: "2"
+      },
+      {
+        name: "languages",
+        type: "folder",
+        space: "4"
+      },
+      {
+        name: "about.js",
+        type: "js",
+        space: "8",
+        code: codeLanguagesAbout
+      },
+      {
+        name: "home.js",
+        type: "js",
+        space: "8",
+        code: codeLanguagesHome
+      },
+      {
+        name: "pages",
+        type: "folder",
+        space: "4"
+      },
+      {
+        name: "about.js",
+        type: "js",
+        space: "8",
+        code: codeRoutesAbout
+      },
+      {
+        name: "home.js",
+        type: "js",
+        space: "8",
+        code: codeRoutesHome
+      },
+      {
+        name: "routes",
+        type: "folder",
+        space: "4"
+      },
+      {
+        name: "routes.js",
+        type: "js",
+        space: "8",
+        code: codeRoutes
+      },
+      {
+        name: "index.js",
+        type: "js",
+        space: "2",
+        code: codeRoutesIndex
+      },
+
+    ],
+  }];
   return (
     <div>
       <Breadcrumb className="mb-6">
@@ -36,12 +125,16 @@ export const ModuloHashRouter = () => {
                 <CardTitle>Fazer a instalação do react-router-dom</CardTitle>
               </div>
               <div className="flex items-start gap-2">
-                <ShieldAlert className="size-6" />
-                <p className="text-md font-semibold">Obs.: Se estiver utilizando o Shared Bundle, faça a instalação no shared bundle e importe no módulo consumidor. </p>
+                <div>
+                  <ShieldAlert className="size-6" />
+                </div>
+                <p className="text-md font-semibold">Obs.: Se estiver utilizando o Shared Bundle, faça a instalação no shared bundle e importe no módulo consumidor. A versão do react-router-dom de exemplo é a versão compativel com a do react abaixo de 17.0.0</p>
               </div>
             </CardHeader>
             <CardContent>
-              <CodeBlock code="npm install react-router-dom" />
+              <div className="grid grid-cols-1 sm:grid-cols-3">
+                <CodeBlock code="npm install react-router-dom@5.3.4" />
+              </div>
             </CardContent>
           </div>
 
@@ -51,12 +144,12 @@ export const ModuloHashRouter = () => {
                 <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-lg font-bold">
                   2
                 </span>
-                <CardTitle>Crie o diretorio routes (nome que preferir) na dentro de src</CardTitle>
+                <CardTitle>Crie o diretorio routes (nome que preferir) dentro de src</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">Exemplo: src/routes/routes.js</p>
-
+              <StructureDir structure={structureHashRouter} />
             </CardContent>
           </div>
         </Card>

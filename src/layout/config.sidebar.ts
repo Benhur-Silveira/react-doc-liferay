@@ -9,7 +9,6 @@ import {
   Lightbulb,
   Languages,
   RouterIcon,
-  Settings,
 } from "lucide-react";
 export const configSidebar = [
   {
@@ -103,13 +102,6 @@ export const configSidebar = [
         path: "/modulo/hash-router",
         Icon: RouterIcon,
         pathActive: "modulo,hash-router",
-      },
-      {
-        external: false,
-        title: "Configuration",
-        path: "/modulo/configurations",
-        Icon: Settings,
-        pathActive: "modulo,configurations",
       },
       {
         external: false,

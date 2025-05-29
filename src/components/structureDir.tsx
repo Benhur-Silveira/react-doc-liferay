@@ -8,13 +8,15 @@ import { cn } from '@/lib/utils'
 const fileType = {
   js: jsIcon,
   jsx: reactIcon,
-  babelrc: babelIcon
+  babelrc: babelIcon,
+  properties: "",
+  json: ""
 }
 
 
 export type StructureType = {
   name: string,
-  type: 'folder' | "js" | "jsx" | "babelrc",
+  type: 'folder' | "js" | "jsx" | "babelrc" | "properties" | "json",
   code?: string,
   space?: string,
   children?: StructureType[]
@@ -28,7 +30,7 @@ export const StructureDir = ({ structure }: { structure: StructureType[] }) => {
         return (
           <div key={name} className={cn("flex flex-col gap-2", `ml-${space}`)}>
             <div className="flex items-center gap-2">
-              {type === "folder" ? <Folder className="h-4 w-4" /> : <img src={fileType[type]} alt={name} />}
+              {type === "folder" ? <Folder className="h-4 w-4 " /> : <img src={fileType[type]} alt={name} />}
               <span>{name}</span>
             </div>
             {code && <StructureCode codeString={code} label={name} />}
@@ -39,7 +41,7 @@ export const StructureDir = ({ structure }: { structure: StructureType[] }) => {
                   {child.code ? <StructureCode className='' codeString={child.code} label={child.name} /> :
                     (
                       <div className="flex items-center gap-2">
-                        {child.type === "folder" ? <Folder className="h-4 w-4" /> : <img src={fileType[child.type]} alt={child.name} className='h-4 w-4' />}
+                        {child.type === "folder" ? <Folder className="h-4 w-4 " /> : <img src={fileType[child.type]} alt={child.name} className='h-4 w-4' />}
                         <span>{child.name}</span>
                       </div>
                     )}
