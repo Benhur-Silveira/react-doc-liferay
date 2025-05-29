@@ -2,6 +2,7 @@ import { CodeBlock } from "@/components/codeBlock";
 import { StructureCode } from "@/components/structureCode";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { codePyton } from "@/constants/codePyton";
 import { codeWebPackConfig, codeWebPackIndex } from "@/constants/codeStrings";
 import { ShieldAlert } from "lucide-react";
 export const ModuloDicas = () => {
@@ -78,6 +79,44 @@ export const ModuloDicas = () => {
                   <StructureCode codeString={codeFragmento} label="fragmento" />
                 </div>
               </div>
+            </CardContent>
+          </div>
+
+          <div className="space-y-2 w-full">
+            <CardHeader>
+              <div className="flex gap-2 items-center">
+                <div>
+                  <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-lg font-bold">
+                    2
+                  </span>
+                </div>
+                <CardTitle>Alternativa ao comando "gw deploy" para módulos criados com Liferay CLI</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2 ml-4">
+                <div className="flex gap-2 items-center ">
+                  <div>
+                    <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                      2.1
+                    </span>
+                  </div>
+                  <CardTitle>Para dar uma agilidade ao deploy do módulo, criei um script em pyton onde fica monitorando a pasta módules e todas vez que é criado um novo arquivo .jar ele o move para a pasta de deploy do portal.</CardTitle>
+                </div>
+                <div className="flex items-start gap-2">
+                  <ShieldAlert className="size-" />
+                  <p className="text-md font-semibold">Obs.: Certifique-se que já tenha instalado o python no seu computador, caso não tenha acesso ao link <a className="hover:underline text-blue-500" target="_blank" href="https://www.python.org">python</a></p>
+                </div>
+                <p>Crie o script python fora do diretório do portal</p>
+                <p className="text-muted-foreground">Exemplo: </p>
+                <StructureCode codeString={codePyton} label="script.py" />
+                <p>Depois disso, abra o terminal e execute o script</p>
+                <div className="grid md:grid-cols-4 grid-cols-1">
+                  <CodeBlock code="python script.py" />
+                </div>
+                <p>Após isso, invés de executar o gw deploy, basta executar o npm run build e o script irá mover o arquivo .jar para a pasta de deploy do portal.</p>
+              </div>
+
             </CardContent>
           </div>
         </Card>

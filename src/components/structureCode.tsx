@@ -1,6 +1,7 @@
 import jsIcon from '@/assets/img/javascript-icon.png'
 import reactIcon from '@/assets/img/react.svg'
 import babelIcon from '@/assets/img/babel-icon.png'
+import pythonIcon from '@/assets/img/pyton-icon.png'
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs"
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { cn } from '@/lib/utils'
@@ -19,13 +20,13 @@ const renderIcon = {
   js: jsIcon,
   jsx: reactIcon,
   babelrc: babelIcon,
+  py: pythonIcon,
 }
 
 export const StructureCode = ({ codeString, label, className, show = false }: StructureCodeProps) => {
   const [typeIcon] = label.split('.').reverse()
   const [showCode, setShowCode] = useState(show)
 
-  console.log(renderIcon[typeIcon as keyof typeof renderIcon])
 
   return (
     <div className={cn("", className)}>
