@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { codeConsumerCliMask } from "@/constants/codeStrings";
-import { codeJestSetupLiferaySenSharedBundle, codePackageJsonLiferaySenSharedBundle, codeTextMaskComponent, codeTextMaskTestComSharedBundle, codeTitleComponentYo, codeTitleTestSemSharedBundleYo, codeUrtilsSharedBundle, codeViteConfigComSharedBundleYo, codeViteConfigYo } from "@/constants/codeTestes";
+import { codeJestSetupLiferaySenSharedBundle, codeTextMaskComponent, codeTextMaskTestComSharedBundle, codeTitleComponentYo, codeTitleTestSemSharedBundleYo, codeUrtilsSharedBundle, codeViteConfigComSharedBundleYo, codeViteConfigYo } from "@/constants/codeTestes";
 
 
 export const YoLiferayJsTestesUnitarios = () => {
