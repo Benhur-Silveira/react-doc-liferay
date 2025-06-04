@@ -9,6 +9,7 @@ import {
   Lightbulb,
   Languages,
   RouterIcon,
+  FlaskConical,
 } from "lucide-react";
 export const configSidebar = [
   {
@@ -46,6 +47,13 @@ export const configSidebar = [
         pathActive: "yo-liferay-js,yo-shared-bundle",
       },
       {
+        external: false,
+        title: "Testes Unitários",
+        path: "/yo-liferay-js/yo-testes-unitarios",
+        Icon: FlaskConical,
+        pathActive: "yo-liferay-js,yo-testes-unitarios",
+      },
+      {
         external: true,
         title: "Documentação Oficial",
         path: "https://help.liferay.com/hc/pt/articles/360029147411-Installing-the-JS-Generator-and-Generating-a-Bundle",
@@ -80,6 +88,13 @@ export const configSidebar = [
         path: "/liferay-cli/cli-shared-bundle",
         Icon: Package,
         pathActive: "liferay-cli,cli-shared-bundle",
+      },
+      {
+        external: false,
+        title: "Testes Unitários",
+        path: "/liferay-cli/cli-testes-unitarios",
+        Icon: FlaskConical,
+        pathActive: "liferay-cli,cli-testes-unitarios",
       },
       {
         external: true,

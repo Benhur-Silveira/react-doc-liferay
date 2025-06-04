@@ -55,7 +55,7 @@ export const ModuloDicas = () => {
                   <CodeBlock code="npm install -D html-webpack-plugin@5.6.3 webpack@5.99.9 webpack-cli@6.0.1 webpack-dev-server@5.2.1" />
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldAlert className="size-8" />
+                  <ShieldAlert className="size-6" />
                   <p className="text-md font-semibold">Obs.: Lembre-se que sempre que antes de fazer o build do módulo deve-se comentar a função main() que está sendo iniciada no index.js</p>
                 </div>
                 <p className="text-muted-foreground">Exemplos: </p>
@@ -127,8 +127,6 @@ export const ModuloDicas = () => {
 };
 
 const codeFragmento = `<div class="fragment_10" id="fragment_10" >
-	<div id="root">
-		
-	</div>
+	<div id="root"></div>
 </div>
 <script src="http://localhost:3000/bundle.js"></script>`;

@@ -13,6 +13,8 @@ import { ModuloHashRouter } from "@/pages/modulos/hashrouter";
 import { ModuloLanguages } from "@/pages/modulos/languages";
 import { Modulo } from "@/pages/modulos";
 import { ModuloDicas } from "@/pages/modulos/dicas";
+import { LiferayCliTestesUnitarios } from "@/pages/liferaycli/testesUnitarios";
+import { YoLiferayJsTestesUnitarios } from "@/pages/yeoman/testesUnitarios";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +38,9 @@ const routes = createBrowserRouter([
           }, {
             path: "yo-shared-bundle",
             element: <YoLiferayJsSharedBundle />,
+          }, {
+            path: "yo-testes-unitarios",
+            element: <YoLiferayJsTestesUnitarios />,
           },
         ]
       },
@@ -52,6 +57,9 @@ const routes = createBrowserRouter([
           }, {
             path: "cli-shared-bundle",
             element: <LiferayCliSharedBundle />,
+          }, {
+            path: "cli-testes-unitarios",
+            element: <LiferayCliTestesUnitarios />,
           },
         ]
       },

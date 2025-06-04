@@ -14,6 +14,7 @@ interface StructureCodeProps {
   label: string,
   className?: string,
   show?: boolean
+  space?: string,
 }
 
 const renderIcon = {
@@ -23,13 +24,12 @@ const renderIcon = {
   py: pythonIcon,
 }
 
-export const StructureCode = ({ codeString, label, className, show = false }: StructureCodeProps) => {
+export const StructureCode = ({ codeString, label, show = false, space = "0" }: StructureCodeProps) => {
   const [typeIcon] = label.split('.').reverse()
   const [showCode, setShowCode] = useState(show)
 
-
   return (
-    <div className={cn("", className)}>
+    <div style={{ marginLeft: +space * 4 }}>
       <div className={cn("flex items-center gap-2 cursor-pointer w-[max-content]")} role="button" onClick={() => setShowCode(!showCode)}>
         {typeIcon === "properties" ? <Code2 className="size-5" /> : typeIcon === "json" ? <Braces className="size-5" /> : renderIcon[typeIcon as keyof typeof renderIcon] === undefined ? <File className="size-5" /> : <img src={renderIcon[typeIcon as keyof typeof renderIcon]} alt="React Icon" className="h-4 w-4" />}
         <span>{label}</span>
